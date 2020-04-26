@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://ch.com/schema/rpc"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            targetNamespace="http://ch.com/schema/rpc"
+            elementFormDefault="qualified">
+    <xsd:import namespace="http://www.springframework.org/schema/beans" />
+    <xsd:import namespace="http://www.springframework.org/schema/tool" />
+
+    <xsd:element name="service">
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="beans:identifiedType">
+                    <xsd:attribute name="ref" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation><![CDATA[ impl ]]></xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="interfaceClass" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation><![CDATA[ interface ]]></xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="version" type="xsd:string" />
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

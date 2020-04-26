@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:link="http://ch.com/schema/rpc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpc="http://ch.com/schema/rpc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://ch.com/schema/rpc
+       http://ch.com/schema/rpc/rpc.xsd">
+    <rpc:service id="serviceConfig"
+                  ref="helloService"
+                  interfaceClass="com.test.service.HelloService"
+                  version="1.0.0"/>
+
+</beans>
