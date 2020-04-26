@@ -1,6 +1,7 @@
 package com.ch.rpcclient.service;
 
 import com.ch.rpcclient.Client;
+import com.ch.rpccore.client.NettyClient;
 import com.ch.rpccore.model.RpcRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class RpcServiceImpl implements RpcService{
 
-
-    private Client client;
-
     @Autowired
-    public void setClient(Client client) {
-        this.client = client;
-    }
+    private NettyClient client;
 
     @Override
     public void send(RpcRequest request) {

@@ -12,10 +12,9 @@ import io.netty.handler.timeout.IdleStateHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.stereotype.Component;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,15 +25,22 @@ import java.util.concurrent.*;
  * @Author chenhao
  * @Date 2020/4/22
  **/
-@Component
 @Slf4j
 public class NettyServer implements ApplicationContextAware,InitializingBean {
 
     private Map<String, Object> serviceMap = new HashMap<>();
 
-    //@Value("${rpc.server.address}")
     private String host="127.0.0.1";
     private Integer port=8081;
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
     /**
      * bossGroup就是parentGroup，是负责处理TCP/IP连接的
      */

@@ -1,7 +1,6 @@
 package com.ch.rpccore.client;
 
 import com.ch.rpccore.model.RpcRequest;
-import com.ch.rpccore.model.RpcResponse;
 import com.ch.rpccore.netty.codec.JSONDecoder;
 import com.ch.rpccore.netty.codec.JSONEncoder;
 import io.netty.bootstrap.Bootstrap;
@@ -12,19 +11,24 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 
-import org.springframework.stereotype.Component;
-
 /**
  * @Description: TODO
  * @Author chenhao
  * @Date 2020/4/23
  **/
 
-@Component
 @Slf4j
 public class NettyClient  implements InitializingBean {
     private String host="127.0.0.1";
     private Integer port=8081;
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
 
     private Channel channel;
 
