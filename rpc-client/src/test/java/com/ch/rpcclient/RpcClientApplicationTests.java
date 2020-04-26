@@ -2,7 +2,6 @@ package com.ch.rpcclient;
 
 import com.ch.rpcclient.service.RpcService;
 import com.ch.rpccore.model.RpcRequest;
-import io.netty.channel.Channel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -16,7 +15,6 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
 
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.UUID;
 
 
